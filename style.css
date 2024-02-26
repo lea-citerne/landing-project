@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+/*Fonts and Colors*/
+
+body{
+	padding-top: 60px;
+	background:#e0e5ea ;
+	color:rgb(40, 40, 40);
+	font-family: Lora;
+	font-size: 18px;
+	text-align: center;
+}
+
+h1,h2,h3,h4{
+	font-family:Roboto;
+	font-weight: bold;
+}
+
+h1{
+	color:#414e56;
+	font-size: 70px;
+}
+
+h2{
+	color:rgb(20, 20, 20);
+	font-size: 50px;
+	font-weight: lighter;
+}
+
+a{
+	text-decoration: none;
+	color:#547b97;
+	font-weight: bold;
+}
+a:hover{
+	color:#004aad;
+}
+
+
+                   /* Custom designs with class*/
+
+/*Buton styles*/
+.btn-blue{
+	background-color: #005386;
+	color: floralwhite;
+	padding: 15px 20px;
+	border-radius: 5px;
+}
+.btn-blue:hover{
+	background-color: black ;
+	color: floralwhite;
+}
+
+/*Images styles*/
+.img-wide{
+	width:100%;
+	height: auto;
+	display: block;
+	object-fit: cover;
+	object-position:center;
+}
+
+
+.img-circle{
+	border-radius:50%;
+	width: 75px;
+}
+
+/*Lists styles*/ 
+
+.horizontal-list{
+	list-style-type: none;
+	padding-left:0px;
+}
+
+.horizontal-list li{
+	display:inline-block;
+	padding:35px;
+}
+
+.horizontal-list i{
+	font-size: 50px;
+	color: rgb(100,100,100);
+}
+
+.horizontal-list i:hover{
+	font-size: 60px;
+}
+/*Responsiveness*/
+
+.container{
+	width: 850px;
+    margin: 40px auto;
+}
+
+@media(max-width:760px){
+	.container{
+		width:600px;
+	}
+}
+
+@media(max-width:500px){
+	.container{
+		width:400px;
+	}
+}
+
+@media(max-width:760px){
+	.banner{
+		width:600px;
+	}
+}
+
+@media(max-width:500px){
+	.banner{
+		width:400px;
+	}
+}
+
+
+/* Div styles*/
+
+
+
+.top-banner{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	background-color:#414E56;
+	opacity: 1;
+	color:floralwhite;
+	padding:10px 0;
+	z-index:1000;
+}
+
+.top-banner h2{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.header{
+	background: floralwhite;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	margin:20px 0px;
+	text-align: center;
+}
+
+.header p{
+margin-bottom: 40px;
+}
+
+
+.box-flex{
+	display:flex;
+	justify-content: space-between;
+	background-color: floralwhite;
+	padding: 30px;
+	border-radius: 5px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+	margin:20px 0px;
+
+}
+
+.banner{
+	background-image: url(images/tech.jpg);
+	font-weight: bold;
+	margin-top: 120px;
+	position: center;
+	background-size: cover;
+	background-position: center;
+}
+
+.banner h2{
+	opacity: 0.8;
+}
+
+.cards{
+	dsiplay:flex;
+	flex-wrap: wrap;
+}
+
+.card{
+	padding: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0px 10px 30px rgba(0,0,0,0.2);
+	border-radius: 6px;
+	margin: 20px 0px;
+}
+
+.card img{
+	width:70px;
+	border-radius: 6px;
+}
+.card h4{
+	padding: 20px;
+
+}
+
+
+
+
+
+
+
+
+
+                             /*Design Adjustments with id*/
+
+#top-banner-list li:hover{
+	font-weight: bold;
+}
+
+#list-sustain{
+	list-style-type: none;
+}
+
+#list-icon{
+	font-size: 50px;
+}
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $name = strip_tags(trim($_POST["name"]));
+    $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+    $message = trim($_POST["message"]);
+
+    // Process the data, like sending an email or saving it to a database
+    // Remember to validate and sanitize input data to protect against malicious input.
+
+    // Redirect to a thank-you page
+    header("Location: thank-you.html");
+} else {
+    // Not a POST request, redirect to the form or home page
+    header("Location: index.html");
+}
+?>
